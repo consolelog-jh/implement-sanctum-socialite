@@ -19,6 +19,13 @@ $schedule->command('sanctum:prune-expired --hours=48')->daily();
 # in "config/sanctum.php" change this
 # number is minute  
 'expiration' => 1,
+
+# add middleware in your project
+# in "app/Http/Kernel.php" add this in routeMiddleware variable
+'isroot' => \Illuminate\Auth\Middleware\IsRoot::class,
+'isadmin' => \Illuminate\Auth\Middleware\IsAdmin::class,
+'isauth' => \Illuminate\Auth\Middleware\IsAuth::class,
+'ispublic' => \Illuminate\Auth\Middleware\IsPublic::class,
 ```
 
 ## Auth basic  
@@ -37,10 +44,12 @@ $schedule->command('sanctum:prune-expired --hours=48')->daily();
 - create files with terminal and copy code's files  
     - all Controllers
     - all Requests
+    - all Middlewares (that are not in the basic project laravel)
     - all Models
     - all Services
     - all database/factories
     - all database/migrations/create_user
     - all database/migrations/create_role (change date in name file)
     - all database/seeders
-    - routes/api.php
+    - routes/api.php  
+
