@@ -36,3 +36,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Role::all()->toJson();
     });
 });
+
+// coucou
