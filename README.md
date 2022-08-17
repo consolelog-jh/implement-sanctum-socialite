@@ -26,11 +26,13 @@ $schedule->command('sanctum:prune-expired --hours=48')->daily();
 - mandatory verification email  
 > don't change anything  
 - just send email verification  
-> comment line 58, 59, 60 in `AuthController.php`  
+> comment line 58, 59, 60 in `AuthController.php`
+> delete middleware 'verifed'   
 - verification email not required  
 > comment line 58, 59, 60 in `AuthController.php`  
 > comment line 85 in `AuthController.php`  
 > decomment line 88 in `AuthController.php`  
+> delete middleware 'verifed'   
 
 - create files with terminal and copy code's files  
     - all Controllers
