@@ -1,5 +1,26 @@
 # implement sanctum socialite  
 
+- install  
+```shell
+# maker service
+$ composer require nordcoders/laravel-service-maker --dev  
+
+# command for create service
+php artisan make:service {name}
+```  
+
+- config  
+```shell
+# delete auto token revoked in database all the 48 hours
+# in "app/Console/Kernel.php" in function "schedule" add this
+$schedule->command('sanctum:prune-expired --hours=48')->daily();
+
+# for change date expired token
+# in "config/sanctum.php" change this
+# number is minute  
+'expiration' => 1,
+```
+
 ## Auth basic  
 
 - mandatory verification email  
@@ -13,6 +34,7 @@
 
 - create files with terminal and copy code's files  
     - all Controllers
+    - all Requests
     - all Models
     - all Services
     - all database/factories
